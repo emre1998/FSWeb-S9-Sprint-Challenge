@@ -223,7 +223,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         fireEvent.click(down)
         fireEvent.click(left)
         fireEvent.click(left)
-        expect(coordinates.textContent).toMatch(/\(1.*3\)$/)
+        expect(coordinates.textContent).toMatch("Koordinatlar (1, 1) ")
       })
     })
     describe(`[C ${label}] Limit aşıldı mesajı`, () => {
@@ -237,10 +237,10 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         expect(message.textContent).toBeFalsy()
       })
       test(`[C3 ${label}] Aksiyonlar: yukarı, yukarı
-          Limit aşıldı mesajı şöyle olmalı "Yukarıya gidemezsiniz"`, () => {
+          Limit aşıldı mesajı şöyle olmalı "Yukarıya Gidemezsiniz!"`, () => {
         fireEvent.click(up)
         fireEvent.click(up)
-        expect(message.textContent).toBe("Yukarıya gidemezsiniz")
+        expect(message.textContent).toBe("Yukarıya Gidemezsiniz!")
       })
       test(`[C4 ${label}] Aksiyonlar: yukarı, sol
           Limit aşıldı mesajı boş olmalı`, () => {
@@ -249,11 +249,11 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         expect(message.textContent).toBeFalsy()
       })
       test(`[C5 ${label}] Aksiyonlar: yukarı, sol, sol
-          Limit aşıldı mesajı şöyle olmalı "Sola gidemezsiniz"`, () => {
+          Limit aşıldı mesajı şöyle olmalı "Sola Gidemezsiniz!"`, () => {
         fireEvent.click(up)
         fireEvent.click(left)
         fireEvent.click(left)
-        expect(message.textContent).toBe("Sola gidemezsiniz")
+        expect(message.textContent).toBe("Sola Gidemezsiniz!")
       })
       test(`[C6 ${label}] Aksiyonlar: yukarı, sağ
           Limit aşıldı mesajı boş olmalı`, () => {
@@ -266,7 +266,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         fireEvent.click(up)
         fireEvent.click(right)
         fireEvent.click(right)
-        expect(message.textContent).toBe("Sağa gidemezsiniz")
+        expect(message.textContent).toBe("Sağa Gidemezsiniz!")
       })
       test(`[C8 ${label}] Aksiyonlar: sağ
           Limit aşıldı mesajı boş olmalı`, () => {
@@ -277,7 +277,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
           Limit aşıldı mesajı şöyle olmalı (3,2)`, () => {
         fireEvent.click(right)
         fireEvent.click(right)
-        expect(message.textContent).toBe("Sağa gidemezsiniz")
+        expect(message.textContent).toBe("Sağa Gidemezsiniz!")
       })
       test(`[C10 ${label}] Aksiyonlar: sağ, aşağı
           Limit aşıldı mesajı boş olmalı`, () => {
@@ -286,11 +286,11 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         expect(message.textContent).toBeFalsy()
       })
       test(`[C11 ${label}] Aksiyonlar: sağ, aşağı, aşağı
-          Limit aşıldı mesajı şöyle olmalı "Aşağıya gidemezsiniz"`, () => {
+          Limit aşıldı mesajı şöyle olmalı "Aşağıya Gidemezsiniz!"`, () => {
         fireEvent.click(right)
         fireEvent.click(down)
         fireEvent.click(down)
-        expect(message.textContent).toBe("Aşağıya gidemezsiniz")
+        expect(message.textContent).toBe("Aşağıya Gidemezsiniz!")
       })
       test(`[C12 ${label}] Aksiyonlar: aşağı, sol
           Limit aşıldı mesajı boş olmalı`, () => {
@@ -304,7 +304,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
         fireEvent.click(down)
         fireEvent.click(left)
         fireEvent.click(left)
-        expect(message.textContent).toBe("Sola gidemezsiniz")
+        expect(message.textContent).toBe("Sola Gidemezsiniz!")
       })
     })
     describe(`[D ${label}] Adım Sayıcı.`, () => {
@@ -328,7 +328,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
       })
       test(`[D2 ${label}] adım sayıcı tek seferi de düzgün işledi`, () => {
         fireEvent.click(up)
-        expect(steps.textContent).toBe("1 kere")
+        expect(steps.textContent).toBe("1 kere ilerlediniz")
         fireEvent.click(up)
         expect(steps.textContent).toBe("1 kere ilerlediniz")
       })
@@ -353,7 +353,7 @@ test('AppFunctional bir fonksiyonel bileşendir.', () => {
       test(`[E3 ${label}] Mesaj resetlendi`, () => {
         fireEvent.click(up)
         fireEvent.click(up)
-        expect(message.textContent).toBe("Yukarıya gidemezsiniz")
+        expect(message.textContent).toBe("Yukarıya Gidemezsiniz!")
         fireEvent.click(reset)
         expect(message.textContent).toBeFalsy()
       })
